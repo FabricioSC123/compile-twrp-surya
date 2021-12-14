@@ -98,7 +98,7 @@ jobs:
         lunch ${{ github.event.inputs.MANIFEST_TYPE }}_${{ github.event.inputs.DEVICE_NAME }}-eng 
         make clean
         make recoveryimage -j$(nproc --all)        
-        zip -ry workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery_sc.zip recovery.img          
+        zip -ry workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery_sc.zip  workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img          
  
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
